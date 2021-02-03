@@ -13,7 +13,7 @@ class BookersController < ApplicationController
   def create
     bookers = Booker.new(params[:id])
     bookers.save
-    redirect_to "/"
+    redirect_to "/bookers/#{bookers.id}"
   end
 
   def edit
