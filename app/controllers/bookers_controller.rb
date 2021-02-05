@@ -1,5 +1,6 @@
 class BookersController < ApplicationController
   def index
+    @bookers = Booker.all
   end
 
   def show
