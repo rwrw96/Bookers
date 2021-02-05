@@ -8,15 +8,20 @@ class BookersController < ApplicationController
   end
 
   def new
-    @bookers = Booker.new
+    @booker = Booker.new
   end
 
   def create
-    bookers = Booker.new(params[:id])
+    bookers = Booker.new(bookers_params)
     bookers.save
-    redirect_to "/bookers/#{bookers.id}"
+    redirect_to booker_path(bookers.id)
   end
 
   def edit
+  end
+
+  private
+  def bookers_params
+    params.permit(:title, :body)
   end
 end
