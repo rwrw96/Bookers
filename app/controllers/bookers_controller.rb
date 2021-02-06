@@ -18,6 +18,19 @@ class BookersController < ApplicationController
   end
 
   def edit
+    @bookers = Booker.find(params[:id])
+  end
+
+  def update
+    bookers = Booker.find(params[:id])
+    bookers.update(bookers_params)
+    redirect_to booker_path(bookers)
+  end
+
+  def destroy
+    bookers = Booker.find(params[:id])
+    bookers.destroy
+    redirect_to "/bookers"
   end
 
   private

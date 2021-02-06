@@ -4,6 +4,8 @@
 <span><%= book.title %></span>
 <span><%= book.body %></span>
 <span><%= link_to "show" , booker_path(book.id) %></span>
+<span><%= link_to "edit" , edit_booker_path(book.id) %></span>
+<span><%= link_to "delete" , booker_path(book.id) ,  method: :delete %></span>
 <% end %>
 
 <h1>New Book</h1>
