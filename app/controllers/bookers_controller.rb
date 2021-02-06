@@ -13,8 +13,12 @@ class BookersController < ApplicationController
 
   def create
     bookers = Booker.new(bookers_params)
-    bookers.save
-    redirect_to booker_path(bookers.id)
+    if bookers.save
+      redirect_to booker_path(bookers.id)
+      flash[:notice] = "Book was successfully created."
+    else
+      flash[:notice] = "error"
+    end
   end
 
   def edit
