@@ -15,6 +15,7 @@
   </tbody>
 </table>
 
+<%= flash[:notice] %>
 <h2>New Book</h2>
 <div class = title>
     <%= form_with model:@booker ,  local:true do |f| %>

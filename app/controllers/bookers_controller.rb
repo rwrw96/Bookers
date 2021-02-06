@@ -18,6 +18,7 @@ class BookersController < ApplicationController
       flash[:notice] = "Book was successfully created."
     else
       flash[:notice] = "error"
+      redirect_to bookers_path
     end
   end
 
